@@ -15,12 +15,14 @@ namespace CSSProj.Models
         public string UserName { get; set; }
         public string Password { get; set; }
 
+        string conString = ConfigurationManager.ConnectionStrings["CSSConnection"].ConnectionString;
+
         public List<UserModel> GetUsers()
         {
             List<UserModel> list = new List<UserModel>();
             
             //create connection
-            string conString = ConfigurationManager.ConnectionStrings["CSSConnection"].ConnectionString;
+            
             SqlConnection con = new SqlConnection(conString);
             ////command
             //SqlCommand cmd = new SqlCommand("Select * From [User]", con);
@@ -57,6 +59,65 @@ namespace CSSProj.Models
             }
 
             return list;
+        }
+
+        internal void UpdateUser(UserModel um, int id)
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = conString;
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "UPDATE [User] SET usercode = @usercode, username = @username, password = @password " +
+                                      "WHERE Id = @id";
+                    cmd.Parameters.AddWithValue("@usercode", um.UserCode);
+                    cmd.Parameters.AddWithValue("@username", um.UserName);
+                    cmd.Parameters.AddWithValue("@password", um.Password);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        internal void RemoverUser(int id)
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = conString;
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "DELETE FROM [User] " +
+                                      "WHERE Id = @id";
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void AddUser(UserModel um)
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = conString;
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandText = "INSERT INTO [dbo].[User]( [UserCode] , [UserName] ,[PASSWORD])" +
+                                      "VALUES(@usercode, @username, @password)";
+                    cmd.Parameters.AddWithValue("@usercode", um.UserCode);
+                    cmd.Parameters.AddWithValue("@username", um.UserName);
+                    cmd.Parameters.AddWithValue("@password", um.Password);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public UserModel GetUserById(int id)

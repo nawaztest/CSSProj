@@ -39,6 +39,16 @@ namespace CSSProj.Controllers
             try
             {
                 // TODO: Add insert logic here
+                string userCode = collection["UserCode"].ToString();
+                string userName = collection["UserName"].ToString();
+                string password = collection["Password"].ToString();
+
+                UserModel um = new UserModel();
+                um.UserCode = userCode;
+                um.UserName = userName;
+                um.Password = password;
+
+                um.AddUser(um);
 
                 return RedirectToAction("Index");
             }
@@ -51,7 +61,9 @@ namespace CSSProj.Controllers
         // GET: User/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            UserModel um = new UserModel();
+            um = um.GetUserById(id);
+            return View(um);
         }
 
         // POST: User/Edit/5
@@ -61,7 +73,13 @@ namespace CSSProj.Controllers
             try
             {
                 // TODO: Add update logic here
+                UserModel um = new UserModel();
+                um.UserCode = collection["UserCode"].ToString();
+                um.UserName = collection["UserName"].ToString();
+                um.Password = collection["Password"].ToString();
 
+                um.UpdateUser(um, id);
+          
                 return RedirectToAction("Index");
             }
             catch
@@ -73,7 +91,9 @@ namespace CSSProj.Controllers
         // GET: User/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            UserModel um = new UserModel();
+            um = um.GetUserById(id);
+            return View(um);
         }
 
         // POST: User/Delete/5
@@ -83,7 +103,9 @@ namespace CSSProj.Controllers
             try
             {
                 // TODO: Add delete logic here
+                UserModel um = new UserModel();
 
+                um.RemoverUser(id);
                 return RedirectToAction("Index");
             }
             catch
