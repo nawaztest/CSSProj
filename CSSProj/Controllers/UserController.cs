@@ -21,7 +21,9 @@ namespace CSSProj.Controllers
         // GET: User/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            UserModel um = new UserModel();
+            um = um.GetUserById(id);
+            return View(um);
         }
 
         // GET: User/Create
