@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CSSDBLibrary.ProductMaster>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PricipalCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PricipalName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PricipalCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PricipalName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
+        </td>
+    </tr>
+}
+</table>
+
+@{
+            var grid = new WebGrid(source: Model, defaultSort: "ProductId", rowsPerPage: 10);
+}
+<h2> Customer List</h2>
+<div id="grid">
+    @grid.GetHtml(columns: grid.Columns(grid.Column("ProductId"), grid.Column("ProductName"), 
+    grid.Column("PricipalCode"), grid.Column("PricipalName")))
+</div>
+

@@ -1,0 +1,155 @@
+﻿@model CSSProj.Models.CustomerModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CustomerMaster</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactPersonName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactPersonName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressLine1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressLine1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressLine2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressLine2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressLine3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressLine3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountryCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InstallationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InstallationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpiryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpiryDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,10 @@
+D:\project\CSSProj\CSSProj\CSSDBLibrary\bin\Debug\CSSDBLibrary.dll.config
+D:\project\CSSProj\CSSProj\CSSDBLibrary\bin\Debug\CSSDBLibrary.dll
+D:\project\CSSProj\CSSProj\CSSDBLibrary\bin\Debug\CSSDBLibrary.pdb
+D:\project\CSSProj\CSSProj\CSSDBLibrary\bin\Debug\EntityFramework.dll
+D:\project\CSSProj\CSSProj\CSSDBLibrary\bin\Debug\EntityFramework.SqlServer.dll
+D:\project\CSSProj\CSSProj\CSSDBLibrary\bin\Debug\EntityFramework.xml
+D:\project\CSSProj\CSSProj\CSSDBLibrary\bin\Debug\EntityFramework.SqlServer.xml
+D:\project\CSSProj\CSSProj\CSSDBLibrary\obj\Debug\CSSDBLibrary.csprojResolveAssemblyReference.cache
+D:\project\CSSProj\CSSProj\CSSDBLibrary\obj\Debug\CSSDBLibrary.dll
+D:\project\CSSProj\CSSProj\CSSDBLibrary\obj\Debug\CSSDBLibrary.pdb

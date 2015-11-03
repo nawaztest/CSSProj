@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CSSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CallLogging">
+    <Key>
+      <PropertyRef Name="CallId" />
+    </Key>
+    <Property Name="CallId" Type="Int32" Nullable="false" />
+    <Property Name="CustomerCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="System" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallDetails" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CallReportedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallLogDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CallLogTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallAttendedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallAttendedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallAttendedTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallClosedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallClosedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CallClosedTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EngineerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerRemarks" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="QR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CountryMaster">
+    <Key>
+      <PropertyRef Name="CountryCodeID" />
+    </Key>
+    <Property Name="CountryCodeID" Type="Int32" Nullable="false" />
+    <Property Name="CountryCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CountryName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CustomerMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPersonName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLine1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLine2" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLine3" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InstallationDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExpiryDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="To" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="EngineerMaster">
+    <Key>
+      <PropertyRef Name="EngineerID" />
+    </Key>
+    <Property Name="EngineerID" Type="Int32" Nullable="false" />
+    <Property Name="EngineerCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EngineerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InstallationMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SiteSetupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SiteCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SiteName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PrincipalMaster">
+    <Key>
+      <PropertyRef Name="PricipalID" />
+    </Key>
+    <Property Name="PricipalID" Type="Int32" Nullable="false" />
+    <Property Name="PrincipalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrincipalName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLine1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLine2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddressLine3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProductMaster">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PricipalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PricipalName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ProductVersion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VersionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VersionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SiteSetupProductDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="SiteSetupCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SNo" Type="Int32" />
+    <Property Name="CustomerCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VersionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="InstallationDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExpiryDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="StatusMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="CSSDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CallLoggings" EntityType="Self.CallLogging" />
+    <EntitySet Name="CountryMasters" EntityType="Self.CountryMaster" />
+    <EntitySet Name="CustomerMasters" EntityType="Self.CustomerMaster" />
+    <EntitySet Name="Emails" EntityType="Self.Email" />
+    <EntitySet Name="EngineerMasters" EntityType="Self.EngineerMaster" />
+    <EntitySet Name="InstallationMasters" EntityType="Self.InstallationMaster" />
+    <EntitySet Name="PrincipalMasters" EntityType="Self.PrincipalMaster" />
+    <EntitySet Name="ProductMasters" EntityType="Self.ProductMaster" />
+    <EntitySet Name="ProductVersions" EntityType="Self.ProductVersion" />
+    <EntitySet Name="SiteSetupProductDetails" EntityType="Self.SiteSetupProductDetail" />
+    <EntitySet Name="StatusMasters" EntityType="Self.StatusMaster" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <FunctionImport Name="AddCustomer">
+      <Parameter Name="CustomerCode" Mode="In" Type="String" />
+      <Parameter Name="CustomerName" Mode="In" Type="String" />
+      <Parameter Name="ContactPersonName" Mode="In" Type="String" />
+      <Parameter Name="AddressLine1" Mode="In" Type="String" />
+      <Parameter Name="AddressLine2" Mode="In" Type="String" />
+      <Parameter Name="AddressLine3" Mode="In" Type="String" />
+      <Parameter Name="Telephone1" Mode="In" Type="String" />
+      <Parameter Name="Telephone2" Mode="In" Type="String" />
+      <Parameter Name="CountryCode" Mode="In" Type="String" />
+      <Parameter Name="CountryName" Mode="In" Type="String" />
+      <Parameter Name="Fax1" Mode="In" Type="String" />
+      <Parameter Name="Fax2" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Remarks" Mode="In" Type="String" />
+      <Parameter Name="CustomerType" Mode="In" Type="String" />
+      <Parameter Name="InstallationDate" Mode="In" Type="String" />
+      <Parameter Name="ExpiryDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="UpdateCustomer">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+      <Parameter Name="CustomerCode" Mode="In" Type="String" />
+      <Parameter Name="CustomerName" Mode="In" Type="String" />
+      <Parameter Name="ContactPersonName" Mode="In" Type="String" />
+      <Parameter Name="AddressLine1" Mode="In" Type="String" />
+      <Parameter Name="AddressLine2" Mode="In" Type="String" />
+      <Parameter Name="AddressLine3" Mode="In" Type="String" />
+      <Parameter Name="Telephone1" Mode="In" Type="String" />
+      <Parameter Name="Telephone2" Mode="In" Type="String" />
+      <Parameter Name="CountryCode" Mode="In" Type="String" />
+      <Parameter Name="CountryName" Mode="In" Type="String" />
+      <Parameter Name="Fax1" Mode="In" Type="String" />
+      <Parameter Name="Fax2" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Remarks" Mode="In" Type="String" />
+      <Parameter Name="CustomerType" Mode="In" Type="String" />
+      <Parameter Name="InstallationDate" Mode="In" Type="String" />
+      <Parameter Name="ExpiryDate" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

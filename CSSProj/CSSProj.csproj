@@ -52,6 +52,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -168,13 +170,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CountryMastersController.cs" />
+    <Compile Include="Controllers\CustomerMasterController.cs" />
+    <Compile Include="Controllers\EngineerMasterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PrincipalMastersController.cs" />
+    <Compile Include="Controllers\ProductMasterController.cs" />
+    <Compile Include="Controllers\ProductVersionController.cs" />
+    <Compile Include="Controllers\StatusMasterController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CustomerMaster.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Sqlconnection.cs" />
@@ -242,6 +252,41 @@
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\CustomerMaster\Index.cshtml" />
+    <Content Include="Views\CustomerMaster\Details.cshtml" />
+    <Content Include="Views\CustomerMaster\Create1.cshtml" />
+    <Content Include="Views\CustomerMaster\Create.cshtml" />
+    <Content Include="Views\CustomerMaster\Edit.cshtml" />
+    <Content Include="Views\CountryMasters\Create.cshtml" />
+    <Content Include="Views\CountryMasters\Delete.cshtml" />
+    <Content Include="Views\CountryMasters\Details.cshtml" />
+    <Content Include="Views\CountryMasters\Edit.cshtml" />
+    <Content Include="Views\CountryMasters\Index.cshtml" />
+    <Content Include="Views\PrincipalMasters\Create.cshtml" />
+    <Content Include="Views\PrincipalMasters\Delete.cshtml" />
+    <Content Include="Views\PrincipalMasters\Details.cshtml" />
+    <Content Include="Views\PrincipalMasters\Edit.cshtml" />
+    <Content Include="Views\PrincipalMasters\Index.cshtml" />
+    <Content Include="Views\EngineerMaster\Create.cshtml" />
+    <Content Include="Views\EngineerMaster\Delete.cshtml" />
+    <Content Include="Views\EngineerMaster\Details.cshtml" />
+    <Content Include="Views\EngineerMaster\Edit.cshtml" />
+    <Content Include="Views\EngineerMaster\Index.cshtml" />
+    <Content Include="Views\StatusMaster\Create.cshtml" />
+    <Content Include="Views\StatusMaster\Delete.cshtml" />
+    <Content Include="Views\StatusMaster\Details.cshtml" />
+    <Content Include="Views\StatusMaster\Edit.cshtml" />
+    <Content Include="Views\StatusMaster\Index.cshtml" />
+    <Content Include="Views\ProductMaster\Create.cshtml" />
+    <Content Include="Views\ProductMaster\Delete.cshtml" />
+    <Content Include="Views\ProductMaster\Details.cshtml" />
+    <Content Include="Views\ProductMaster\Edit.cshtml" />
+    <Content Include="Views\ProductMaster\Index.cshtml" />
+    <Content Include="Views\ProductVersion\Create.cshtml" />
+    <Content Include="Views\ProductVersion\Delete.cshtml" />
+    <Content Include="Views\ProductVersion\Details.cshtml" />
+    <Content Include="Views\ProductVersion\Edit.cshtml" />
+    <Content Include="Views\ProductVersion\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -253,6 +298,15 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSSDBLibrary\CSSDBLibrary.csproj">
+      <Project>{6bb8a7ee-738a-44a8-bfc1-474b7f0f8a0a}</Project>
+      <Name>CSSDBLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

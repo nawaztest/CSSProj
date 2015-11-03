@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CSSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CallLogging">
+    <Key>
+      <PropertyRef Name="CallId" />
+    </Key>
+    <Property Name="CallId" Type="int" Nullable="false" />
+    <Property Name="CustomerCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="System" Type="nvarchar" MaxLength="50" />
+    <Property Name="CallDetails" Type="nvarchar" MaxLength="200" />
+    <Property Name="CallReportedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CallLogDate" Type="varchar" MaxLength="50" />
+    <Property Name="CallLogTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="CallAttendedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CallAttendedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CallAttendedTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="CallClosedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CallClosedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="CallClosedTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="EngineerRemarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="CustomerRemarks" Type="nvarchar" MaxLength="200" />
+    <Property Name="Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentType" Type="nvarchar" MaxLength="50" />
+    <Property Name="QR" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CountryMaster">
+    <Key>
+      <PropertyRef Name="CountryCodeID" />
+    </Key>
+    <Property Name="CountryCodeID" Type="int" Nullable="false" />
+    <Property Name="CountryCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="CountryName" Type="nchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="CustomerMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactPersonName" Type="nvarchar" MaxLength="100" />
+    <Property Name="AddressLine1" Type="nvarchar" MaxLength="30" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="30" />
+    <Property Name="AddressLine3" Type="nvarchar" MaxLength="30" />
+    <Property Name="Telephone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telephone2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerType" Type="nvarchar" MaxLength="50" />
+    <Property Name="InstallationDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpiryDate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="To" Type="nvarchar" MaxLength="100" />
+    <Property Name="CC" Type="nvarchar" MaxLength="100" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="100" />
+    <Property Name="Message" Type="nvarchar" MaxLength="200" />
+    <Property Name="Date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EngineerMaster">
+    <Key>
+      <PropertyRef Name="EngineerID" />
+    </Key>
+    <Property Name="EngineerID" Type="int" Nullable="false" />
+    <Property Name="EngineerCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="EngineerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="30" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="30" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="30" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="InstallationMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="SiteSetupCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SiteCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="SiteName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PrincipalMaster">
+    <Key>
+      <PropertyRef Name="PricipalID" />
+    </Key>
+    <Property Name="PricipalID" Type="int" Nullable="false" />
+    <Property Name="PrincipalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrincipalName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressLine1" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressLine3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Contact" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telephone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telephone2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProductMaster">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PricipalCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="PricipalName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProductVersion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+    <Property Name="VersionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="VersionName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SiteSetupProductDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="SiteSetupCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="SNo" Type="int" />
+    <Property Name="CustomerCode" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="100" />
+    <Property Name="ProductCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="VersionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="InstallationDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpiryDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="StatusMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="StatusCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserCode" Type="varchar" MaxLength="10" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <Function Name="AddCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CustomerName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactPersonName" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddressLine1" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddressLine2" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddressLine3" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telephone1" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telephone2" Type="nvarchar" Mode="In" />
+    <Parameter Name="CountryCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CountryName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fax1" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fax2" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Remarks" Type="nvarchar" Mode="In" />
+    <Parameter Name="CustomerType" Type="nvarchar" Mode="In" />
+    <Parameter Name="InstallationDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="ExpiryDate" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="CustomerCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CustomerName" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContactPersonName" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddressLine1" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddressLine2" Type="nvarchar" Mode="In" />
+    <Parameter Name="AddressLine3" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telephone1" Type="nvarchar" Mode="In" />
+    <Parameter Name="Telephone2" Type="nvarchar" Mode="In" />
+    <Parameter Name="CountryCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CountryName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fax1" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fax2" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Remarks" Type="nvarchar" Mode="In" />
+    <Parameter Name="CustomerType" Type="nvarchar" Mode="In" />
+    <Parameter Name="InstallationDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="ExpiryDate" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="CSSDBModelStoreContainer">
+    <EntitySet Name="CallLogging" EntityType="Self.CallLogging" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CountryMaster" EntityType="Self.CountryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerMaster" EntityType="Self.CustomerMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Email" EntityType="Self.Email" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EngineerMaster" EntityType="Self.EngineerMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InstallationMaster" EntityType="Self.InstallationMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrincipalMaster" EntityType="Self.PrincipalMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductMaster" EntityType="Self.ProductMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductVersion" EntityType="Self.ProductVersion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SiteSetupProductDetails" EntityType="Self.SiteSetupProductDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusMaster" EntityType="Self.StatusMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

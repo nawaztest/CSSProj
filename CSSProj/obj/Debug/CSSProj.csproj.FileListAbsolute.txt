@@ -67,3 +67,5 @@ D:\project\CSSProj\CSSProj\CSSProj\bin\Microsoft.Owin.Security.MicrosoftAccount.
 D:\project\CSSProj\CSSProj\CSSProj\obj\Debug\CSSProj.csprojResolveAssemblyReference.cache
 D:\project\CSSProj\CSSProj\CSSProj\obj\Debug\CSSProj.dll
 D:\project\CSSProj\CSSProj\CSSProj\obj\Debug\CSSProj.pdb
+D:\project\CSSProj\CSSProj\CSSProj\bin\CSSDBLibrary.dll
+D:\project\CSSProj\CSSProj\CSSProj\bin\CSSDBLibrary.pdb

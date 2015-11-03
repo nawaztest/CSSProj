@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CSSDBModelStoreContainer" CdmEntityContainer="CSSDBEntities">
+    <EntitySetMapping Name="CallLoggings">
+      <EntityTypeMapping TypeName="CSSDBModel.CallLogging">
+        <MappingFragment StoreEntitySet="CallLogging">
+          <ScalarProperty Name="CallId" ColumnName="CallId" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="System" ColumnName="System" />
+          <ScalarProperty Name="CallDetails" ColumnName="CallDetails" />
+          <ScalarProperty Name="CallReportedBy" ColumnName="CallReportedBy" />
+          <ScalarProperty Name="CallLogDate" ColumnName="CallLogDate" />
+          <ScalarProperty Name="CallLogTime" ColumnName="CallLogTime" />
+          <ScalarProperty Name="CallAttendedBy" ColumnName="CallAttendedBy" />
+          <ScalarProperty Name="CallAttendedDate" ColumnName="CallAttendedDate" />
+          <ScalarProperty Name="CallAttendedTime" ColumnName="CallAttendedTime" />
+          <ScalarProperty Name="CallClosedBy" ColumnName="CallClosedBy" />
+          <ScalarProperty Name="CallClosedDate" ColumnName="CallClosedDate" />
+          <ScalarProperty Name="CallClosedTime" ColumnName="CallClosedTime" />
+          <ScalarProperty Name="EngineerRemarks" ColumnName="EngineerRemarks" />
+          <ScalarProperty Name="CustomerRemarks" ColumnName="CustomerRemarks" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+          <ScalarProperty Name="QR" ColumnName="QR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CountryMasters">
+      <EntityTypeMapping TypeName="CSSDBModel.CountryMaster">
+        <MappingFragment StoreEntitySet="CountryMaster">
+          <ScalarProperty Name="CountryCodeID" ColumnName="CountryCodeID" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerMasters">
+      <EntityTypeMapping TypeName="CSSDBModel.CustomerMaster">
+        <MappingFragment StoreEntitySet="CustomerMaster">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ContactPersonName" ColumnName="ContactPersonName" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="AddressLine3" ColumnName="AddressLine3" />
+          <ScalarProperty Name="Telephone1" ColumnName="Telephone1" />
+          <ScalarProperty Name="Telephone2" ColumnName="Telephone2" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="Fax1" ColumnName="Fax1" />
+          <ScalarProperty Name="Fax2" ColumnName="Fax2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+          <ScalarProperty Name="InstallationDate" ColumnName="InstallationDate" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emails">
+      <EntityTypeMapping TypeName="CSSDBModel.Email">
+        <MappingFragment StoreEntitySet="Email">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="To" ColumnName="To" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EngineerMasters">
+      <EntityTypeMapping TypeName="CSSDBModel.EngineerMaster">
+        <MappingFragment StoreEntitySet="EngineerMaster">
+          <ScalarProperty Name="EngineerID" ColumnName="EngineerID" />
+          <ScalarProperty Name="EngineerCode" ColumnName="EngineerCode" />
+          <ScalarProperty Name="EngineerName" ColumnName="EngineerName" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstallationMasters">
+      <EntityTypeMapping TypeName="CSSDBModel.InstallationMaster">
+        <MappingFragment StoreEntitySet="InstallationMaster">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteSetupCode" ColumnName="SiteSetupCode" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="SiteCode" ColumnName="SiteCode" />
+          <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrincipalMasters">
+      <EntityTypeMapping TypeName="CSSDBModel.PrincipalMaster">
+        <MappingFragment StoreEntitySet="PrincipalMaster">
+          <ScalarProperty Name="PricipalID" ColumnName="PricipalID" />
+          <ScalarProperty Name="PrincipalCode" ColumnName="PrincipalCode" />
+          <ScalarProperty Name="PrincipalName" ColumnName="PrincipalName" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="AddressLine3" ColumnName="AddressLine3" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Telephone1" ColumnName="Telephone1" />
+          <ScalarProperty Name="Telephone2" ColumnName="Telephone2" />
+          <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="Fax1" ColumnName="Fax1" />
+          <ScalarProperty Name="Fax2" ColumnName="Fax2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductMasters">
+      <EntityTypeMapping TypeName="CSSDBModel.ProductMaster">
+        <MappingFragment StoreEntitySet="ProductMaster">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="PricipalCode" ColumnName="PricipalCode" />
+          <ScalarProperty Name="PricipalName" ColumnName="PricipalName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductVersions">
+      <EntityTypeMapping TypeName="CSSDBModel.ProductVersion">
+        <MappingFragment StoreEntitySet="ProductVersion">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="VersionCode" ColumnName="VersionCode" />
+          <ScalarProperty Name="VersionName" ColumnName="VersionName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SiteSetupProductDetails">
+      <EntityTypeMapping TypeName="CSSDBModel.SiteSetupProductDetail">
+        <MappingFragment StoreEntitySet="SiteSetupProductDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SiteSetupCode" ColumnName="SiteSetupCode" />
+          <ScalarProperty Name="SNo" ColumnName="SNo" />
+          <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="VersionCode" ColumnName="VersionCode" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="InstallationDate" ColumnName="InstallationDate" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusMasters">
+      <EntityTypeMapping TypeName="CSSDBModel.StatusMaster">
+        <MappingFragment StoreEntitySet="StatusMaster">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CSSDBModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserCode" ColumnName="UserCode" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddCustomer" FunctionName="CSSDBModel.Store.AddCustomer" />
+    <FunctionImportMapping FunctionImportName="UpdateCustomer" FunctionName="CSSDBModel.Store.UpdateCustomer" />
+  </EntityContainerMapping>
+</Mapping>
